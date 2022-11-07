@@ -13,6 +13,6 @@ pip install pillow
 ```
 
 Created By: 
-Abdulrahman Fahmy
-Yousef Yasser
+Abdulrahman Fahmy,
+Yousef Yasser,
 Yehia Mohamed
