@@ -2,6 +2,7 @@ import qrcode, openpyxl, os
 from faker import Faker
 from faker.providers import DynamicProvider
 from PIL import Image
+from sys import argv
 
 wb = openpyxl.Workbook()
 ws = wb.active
@@ -44,7 +45,9 @@ def Generate_img(qr):
         return img
     
 
-def main():
+def main(imagesPath):
+    os.makedirs(imagesPath, exist_ok = True)
+    
     create_ExcelSheet()
     for i in range(2, ws.max_row+1):
         data = ""
@@ -61,11 +64,14 @@ def main():
         
         #modifies the excel sheet
         title = 'person no. '
-        link = os.getcwd() + title + str(i-1) + ".png"
+        link = os.path.join(imagesPath, f"{title}{str(i-1)}.png")
         img.save(link)
         ws['E'+str(i)] = link
         ws['F'+str(i)] = 'IEEE-'+str(i-1);
 
-    
-main()
-wb.save('Sample.xlsx')
+
+if __name__ == "__main__":
+    imagesPath = os.path.dirname(argv[0]) if len(os.path.dirname(argv[0])) != 0 else os.getcwd()    
+    imagesPath = os.path.join(imagesPath, 'images')
+    main(imagesPath)
+    wb.save('Sample.xlsx')
