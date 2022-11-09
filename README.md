@@ -2,7 +2,7 @@
 Generates QR-code images from excel sheet and adds QR-code image link to the excel sheet
 
 ```bash
-git clone https://github.com/abdulrhman500/Qr-Genrator.git
+git clone https://github.com/yousefyasser/Event-attendees-management.git
 python -m venv .venv
 .venv\Scripts\activate
 pip install pandas
