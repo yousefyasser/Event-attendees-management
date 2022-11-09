@@ -3,8 +3,7 @@ Generates QR-code images from excel sheet and adds QR-code image link to the exc
 
 ```bash
 git clone https://github.com/yousefyasser/Event-attendees-management.git
-python -m venv .venv
-.venv\Scripts\activate
+
 pip install pandas
 pip install openpyxl
 pip install xlsxwriter
