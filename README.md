@@ -10,6 +10,7 @@ pip install openpyxl
 pip install xlsxwriter
 pip install qrcode
 pip install pillow
+pip install faker
 ```
 
 Created By: 
